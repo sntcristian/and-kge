@@ -29,7 +29,8 @@ LiteralE only support computation on GPU (CUDA). The original code was tested wi
 To run the models execute the following command:<br/>
 `!python main_literal.py dataset OC-55K model MODEL_NAME input_drop INPUT_DROPOUT embedding_dim EMBEDDING_SIZE batch_size BATCH_SIZE epochs EPOCHS_NUM lr LEARNING_RATE process True`
 
-###Changes made to original code
+### Changes made to original code
 
 This repository reuses code from https://github.com/SmartDataAnalytics/LiteralE.<br/>
-We modified the file `spodernet/preprocessing/batching.py` since a ValueError was occuring with the original code.
+We modified the file `spodernet/preprocessing/batching.py` since a ValueError was occuring with the original code.<br/>
+This repository also includes **bashmagic** module.
