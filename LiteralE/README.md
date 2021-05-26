@@ -27,7 +27,7 @@ LiteralE only support computation on GPU (CUDA). The original code was tested wi
 ### Running the models
 
 To run the models execute the following command:<br/>
-`!python main_literal.py dataset OC-55K model MODEL_NAME input_drop INPUT_DROPOUT embedding_dim EMBEDDING_SIZE batch_size BATCH_SIZE epochs EPOCHS_NUM lr LEARNING_RATE process True`
+`python main_literal.py dataset OC-55K model MODEL_NAME input_drop INPUT_DROPOUT embedding_dim EMBEDDING_SIZE batch_size BATCH_SIZE epochs EPOCHS_NUM lr LEARNING_RATE process True`
 
 ### Changes made to original code
 
