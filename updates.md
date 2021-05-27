@@ -37,7 +37,21 @@
 **Mean Reciprocal Rank:** 0.04.
 #### Discussions on preliminary results
 - The models trained for 100 epochs have bad performances.
-- Both in validation and testing the models have poorer performances in tail prediction rather than head prediction
+- Both in validation and testing the models have poorer performances in tail prediction rather than head prediction.
 - DistMult, with same parameters, performs better than ComplEx.
 - By increasing learning rate (fro 0.001 to 0.01) the model performances did not increase.
 - Two ways of preventing the models from underfitting might be to train them for more epochs or feed them with more (structural) data (e.g. by adding coauthorship links between authors).
+## Results from DistMult with textual and numerical literals (500 epochs)
+- I trained the `DistMult_text` model available in [LiteralE](https://github.com/SmartDataAnalytics/LiteralE) on `OC-55K`.
+- Hyperparameters were `input_drop 0.2`, `embedding_dim 100`, `batch_size 128`, `epochs 500`, `lr 0.01`.
+- Final results on the test set were: <br/>
+  **Hits@1:** 0.04,
+  **Hits@3:** 0.07,
+  **Hits@5:** 0.09,
+  **Hits@8:** 0.11,
+  **Hits@10:** 0.119,
+  **Mean Rank:** 4737,
+  **Mean Reciprocal Rank:** 0.11. <br/>
+- By increasing the epochs the performances increased, but not significantly.
+- Still, the model was not able to reduce the difference between the prediction scores of head and tail entities.
+- The model's performances reached their peak around epoch 400 and then started to fluctuate and decrease.
