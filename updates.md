@@ -24,7 +24,7 @@
   **Hits@10:** 0.116,
   **Mean Rank:** 4507,
   **Mean Reciprocal Rank:** 0.06. <br/>
-  #### Results from ComplEx with numerical literals (100 epochs)
+#### Results from ComplEx with numerical literals (100 epochs)
 - I trained the `ComplEx_gate` model available in [LiteralE](https://github.com/SmartDataAnalytics/LiteralE) on `OC-55K`.
 - Hyperparameters were the same as in DistMult.
 - Final results on the test set were: <br/>
@@ -41,7 +41,7 @@
 - DistMult, with same parameters, performs better than ComplEx.
 - By increasing learning rate (fro 0.001 to 0.01) the model performances did not increase.
 - Two ways of preventing the models from underfitting might be to train them for more epochs or feed them with more (structural) data (e.g. by adding coauthorship links between authors).
-## Results from DistMult with textual and numerical literals (500 epochs)
+#### Results from DistMult with textual and numerical literals (500 epochs)
 - I trained the `DistMult_text` model available in [LiteralE](https://github.com/SmartDataAnalytics/LiteralE) on `OC-55K`.
 - Hyperparameters were `input_drop 0.2`, `embedding_dim 100`, `batch_size 128`, `epochs 500`, `lr 0.01`.
 - Final results on the test set were: <br/>
