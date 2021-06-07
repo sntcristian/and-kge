@@ -14,11 +14,11 @@ Our decision to rely on the project [LiteralE](https://github.com/SmartDataAnaly
 2. there was no sufficient documentation,
 3. the project did not allow for many functionalities that we need (e.g. hyper-parameter optimization).
 Thus, what we did was to shift to a more mantained library called [pykeen](https://github.com/pykeen/pykeen) a Python package designed to train and evaluate knowledge graph embedding models (incorporating multi-modal information). This library already support an implementation of the `DistMultLiteral` model which support numeric information from KGs. <br/>
-The forked version contained in the folder `pykeen-AND` of this repo contains the release `1.4.1-dev` of pykeen modified in order to allow to train knowledge graph embeddings by using also textual literals info. As in the current state of the repository, we were able to implement a model called **DistMultText** which encodes textual labels of entities (e.g. titles and names) into embeddings by means of **allenai-specter** a BERT language model pre-trained on scholarly literature. For further information please take a look at the `README.md` file in the `pykeen-AND` folder.
+In the folder `pykeen-AND` of this repo we put some extension files for the release `1.4.1-dev` of pykeen in order to allow to train knowledge graph embeddings by using also textual literals info. As in the current state of the repository, we were able to implement a model called **DistMultText** which encodes textual labels of entities (e.g. titles and names) into embeddings by means of **allenai-specter** a BERT language model pre-trained on scholarly literature. For further information please take a look at the `README.md` file in the `pykeen-AND` folder.
 #### Notebooks
 We introduced the publication of the colab notebooks used to run our experiments. This was mainly done for two reasons:
 1. provide a reproducible workflow of our experimental procedures,
-2. show how to correctly install and run our modified version of library,
+2. show how to correctly install and run our extension of the library,
 3. show how to correctly run our models inside the pykeen framework.
 You can find the colab notebooks in the `notebooks` folder.
 
