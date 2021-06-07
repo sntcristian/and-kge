@@ -1,19 +1,22 @@
 <h1>Pykeen-AND</h1>
 This folder contains some extension files of [pykeen v.1.4.1-dev](https://github.com/pykeen/pykeen).
 # To start
-In order to install to run the extension files of pykeen: 
+In order to install to run the extension files of pykeen: <br/>
 1. Clone the latest release of pykeen, by means of:
+
 ```
 $ git clone https://github.com/pykeen/pykeen.git
 ```
 2. Go inside the `pykeen/src/models/` folder and overwrite the `multimodal` directory with the one contained in this folder.
-2. Go in `pykeen/src` and overwrite the `triples` folder with the `triples` directory of this folder.
-3. Once you have overwritten the original files in the pykeen repository, open your command line inside your pykeen folder and install the dependencies by using:
+3. Go in `pykeen/src` and overwrite the `triples` folder with the `triples` directory of this folder.
+4. Once you have overwritten the original files in the pykeen repository, open your command line inside your pykeen folder and install the dependencies by using:
+
 ```
 $ cd pykeen
 $ pip install -e .
 ```
-4. In order to use our models which support text literals, make sure to also have installed the `sentence-transformers` library.
+5. In order to use our models which support text literals, make sure to also have installed the `sentence-transformers` library.
+
 ```
 !pip install sentence-transformers
 ```
