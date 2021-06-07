@@ -1,7 +1,9 @@
 # Author Name Disambiguation with Knowledge Graph Embeddings
 
-This is the repository for my master thesis project [@Digital Humanities and Digital Knowledge](https://corsi.unibo.it/2cycle/DigitalHumanitiesKnowledge).
+This is the repository for my master thesis project on Knowledge Graph Embeddings for Author Name Disambiguation.
 
-## Reports
+## Affiliation
 
-- Report 21/05/2021: [slides](https://docs.google.com/presentation/d/12JzKb53fGLuNAyHXao7tzu0kn5Cor8FKPT_bW7_U2Js/edit?usp=sharing)
+- [@Digital Humanities and Digital Knowledge](https://corsi.unibo.it/2cycle/DigitalHumanitiesKnowledge)
+- [Information Service Engineering | FIZ Karlsruhe](https://www.fiz-karlsruhe.de/en/forschung/information-service-engineering)
+
