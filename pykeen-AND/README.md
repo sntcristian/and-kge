@@ -1,5 +1,5 @@
 <h1>Pykeen-AND</h1>
-This folder contains some extension files of [pykeen v.1.4.1-dev](https://github.com/pykeen/pykeen).
+This folder contains some extension files of https://github.com/pykeen/pykeen.
 
 ## To start
 In order to install to run the extension files of pykeen clone the latest (1.4.1-dev) release of pykeen, by means of:
@@ -10,7 +10,7 @@ $ git clone https://github.com/pykeen/pykeen.git
 Once you have cloned the repository, execute the following steps:
 1. Go inside the `pykeen/src/models/` folder and overwrite the `multimodal` directory with the one contained in this folder.
 2. Go in `pykeen/src` and overwrite the `triples` folder with the `triples` directory of this folder.
-3. Once you have overwritten the original files in the pykeen repository, open your command line inside your pykeen folder and install the dependencies by using:
+3. Once you have executed these steps, open your command line inside your pykeen folder and install the library by using:
 
 ```
 $ cd pykeen
