@@ -22,7 +22,7 @@ In order to use our models which support text literals, make sure to also have i
 ```
 !pip install sentence-transformers
 ```
-## Modifications:
+## Extensions:
 In this modified version of [pykeen v.1.4.1-dev](https://github.com/pykeen/pykeen), we introduced a new model, `DistMultText`, which allows to train knowledge graph embeddings by making entity representations interact with embeddings derived from corresponding labels via a linear transformation. This model was firstly introduced in ([Kristiadi, 2018](https://arxiv.org/abs/1802.00934)). Source code of the model [here](https://github.com/sntcristian/and-kge/blob/main/pykeen-AND/multimodal/distmult_text.py).<br/>
 In order to implement our model we introduced the class `TriplesTextualLiteralsFactory` which models textual labels associated to entities by means of **allenai-specter** a BERT language model pre-trained on scholarly literature. You can see the implementation of this class [here](https://github.com/sntcristian/and-kge/blob/main/pykeen-AND/triples/triples_textual_literals_factory.py).
 
