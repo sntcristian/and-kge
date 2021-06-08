@@ -3,7 +3,7 @@
 This folder contains some extension files of [pykeen](https://github.com/pykeen/pykeen) v.1.4.1-dev.
 
 ## To start
-In order to install to run the extension files of pykeen clone the latest (1.4.1-dev) release of pykeen, by means of:
+In order to run the extension files of pykeen clone the latest (1.4.1-dev) release of pykeen, by means of:
 
 ```
 $ git clone https://github.com/pykeen/pykeen.git
