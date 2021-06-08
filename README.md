@@ -4,6 +4,6 @@ This is the repository for my master thesis project on Knowledge Graph Embedding
 
 ## Affiliation
 
-- [@Digital Humanities and Digital Knowledge](https://corsi.unibo.it/2cycle/DigitalHumanitiesKnowledge)
-- [Information Service Engineering | FIZ Karlsruhe](https://www.fiz-karlsruhe.de/en/forschung/information-service-engineering)
+- [Digital Humanities and Digital Knowledge - University of Bologna](https://corsi.unibo.it/2cycle/DigitalHumanitiesKnowledge)
+- [Information Service Engineering - FIZ Karlsruhe](https://www.fiz-karlsruhe.de/en/forschung/information-service-engineering)
 
