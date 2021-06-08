@@ -4,8 +4,8 @@
 ### Update 7/06/2021
 #### Dataset update
 We noticed that the previous datasets suffered from severe bugs, among which:
-1. Publishers and works were not disambiguated,
-2. The preprocessing algorithm produced many duplicate triples,
+1. publishers and works were not disambiguated,
+2. the preprocessing algorithm produced many duplicate triples,
 3. literal triples were included in the train, test and validation datasets.
 We corrected these errors and we updated the dataset according to a revised data model. This dataset is called `OC-197K` and it contains 197,366 triples, among which 87,511 are triples containing textual literals (e.g. titles of works, authors' names). The data model is available in the `docs` folder.
 #### Library update
@@ -13,7 +13,7 @@ Our decision to rely on the project [LiteralE](https://github.com/SmartDataAnaly
 1. the project is no more mantained,
 2. there was no sufficient documentation,
 3. the project did not allow for many functionalities that we need (e.g. hyper-parameter optimization).
-Thus, what we did was to shift to a more mantained library called [pykeen](https://github.com/pykeen/pykeen) a Python package designed to train and evaluate knowledge graph embedding models (incorporating multi-modal information). This library already support an implementation of the `DistMultLiteral` model which support numeric information from KGs. <br/>
+Thus, what we did was to shift to a more mantained library called [pykeen](https://github.com/pykeen/pykeen), a Python package designed to train and evaluate knowledge graph embedding models (incorporating multi-modal information). This library already supports an implementation of the `DistMultLiteral` model which support numeric information from KGs. <br/>
 In the folder `pykeen-AND` of this repo we put some extension files for the release `1.4.1-dev` of pykeen in order to allow to train knowledge graph embeddings by using also textual literals info. As in the current state of the repository, we were able to implement a model called **DistMultText** which encodes textual labels of entities (e.g. titles and names) into embeddings by means of **allenai-specter** a BERT language model pre-trained on scholarly literature. For further information please take a look at the `README.md` file in the `pykeen-AND` folder.
 #### Notebooks
 We introduced the publication of the colab notebooks used to run our experiments. This was mainly done for two reasons:
