@@ -1,0 +1,16 @@
+{
+  "dataset": "<user defined>",
+  "evaluator": "rankbased",
+  "loss": "bcewithlogits",
+  "metric": "adjusted_mean_rank",
+  "model": "distmultgatetext",
+  "negative_sampler": "basic",
+  "optimizer": "adam",
+  "pykeen_git_hash": "UNHASHED",
+  "pykeen_version": "1.4.0",
+  "regularizer": "no",
+  "testing": "<user defined>",
+  "training": "<user defined>",
+  "training_loop": "slcwa",
+  "validation": "<user defined>"
+}

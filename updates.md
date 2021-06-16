@@ -1,5 +1,26 @@
 # Project Updates
 
+### Update 16/06/2021
+#### Library update
+With respect to the model added in the previous week to Pykeen (DistMult + text literals), we added to Pykeen two other multimodal models:
+1. `ComplExText`: a model based on **ComplEx** which uses information from textual labels to train knowledge graph embeddings via a linear transformation between the entity representation and the text representation,
+2. `DistMult_gate_text`: a **DistMult** model which uses information coming both from numeric and textual literals in order to train knowledge graph embeddings via a *gated recurrent unit* (GRU) that combines the three vectors (textual, numeric and structural) as described in ([Kristiadi, 2018](https://arxiv.org/abs/1802.00934)).
+However, in order to implement these models, we switched from working with the latest version of Pykeen (now v1.5.0) to its previous release [v-1.4.0](https://github.com/pykeen/pykeen/releases/tag/v1.4.0): we preferred this version for the clarity of code and for having less modularity (easier to add features).<br/>
+We tested all the models inside the Pykeen v1.4.0 suite and they all work. 
+
+#### Dataset update
+Another dataset was created in order to train Knowledge Graph Embeddings with numeric literals as well as text.
+The dataset is called `OC-170K` and is different from the previous one for two aspects:
+1. numeric triples are stored in a separate file and numbers are not considered as structural entities,
+2. now authors are linked in the kg with the property `oco:hasNext`.
+Statistics are available in the `OC-170K` folder and a picture of the data model is available on `docs`.
+
+#### Experiments in authors clustering
+We started our first experiments in authors disambiguation by clustering embeddings extracted from a KGE model trained on `OC-197K`.
+The KGE model was trained on sparse data so it did not have great performances when tested. However, it was possible to test the practicability of clustering the embeddings related to a specific author name (i.e. all authors named "M Bonitz") to disambiguate them. <br/>
+In order to do so, we applied different distance measures between the embeddings (e.g. euclidean distance or cosine similarity) and we applied hierarchical agglomerative clustering by selecting different distance thresholds. In our little experiment, a thresold of 1.4 allowed to distinguish between two different authors having the same name.
+
+#### Efficiency of Multimodal Models on OC-170K
 
 ### Update 7/06/2021
 #### Dataset update
