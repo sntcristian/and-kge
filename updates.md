@@ -42,6 +42,7 @@ The results are stored in CSV format on `trials-OC-170K/results.csv`.
 #### Current issues
 In this section we note down the issues that we still have to face:
 - This procedure involves the manual selection of many parameters, from model hyper-parameters to distance measures and thresholds in clustering.
+- We should consider agents instead of roles (see OpenCitations Data Model).
 - the current dataset doesn't allow to test a systematic author name disambiguation process since author's ORCIDs are not stored.
 - There might be other entities in the Knowledge Graph which were excluded in the embedding modelling process (e.g. `pro:publisher`, `cito:Citation`, `biro:BibliographicReference`).
 - still we haven't addressed the issue of multiple textual labels attached to the same entity (e.f. `foaf:familyName` and `foaf:givenName`).
