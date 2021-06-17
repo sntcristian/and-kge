@@ -18,9 +18,35 @@ Statistics are available in the `OC-170K` folder and a picture of the data model
 #### Experiments in authors clustering
 We started our first experiments in authors disambiguation by clustering embeddings extracted from a KGE model trained on `OC-197K`.
 The KGE model was trained on sparse data so it did not have great performances when tested. However, it was possible to test the practicability of clustering the embeddings related to a specific author name (i.e. all authors named "M Bonitz") to disambiguate them. <br/>
-In order to do so, we applied different distance measures between the embeddings (e.g. euclidean distance or cosine similarity) and we applied hierarchical agglomerative clustering by selecting different distance thresholds. In our little experiment, a thresold of 1.4 allowed to distinguish between two different authors having the same name.
+In order to do so, we applied different distance measures between the embeddings (e.g. euclidean distance or cosine similarity) and we applied hierarchical agglomerative clustering by selecting different distance thresholds. In our little experiment, a thresold of 1.4 allowed to distinguish between two different authors having the same name. A notebook containing the toy example is available in `notebooks/author_disambiguation.ipynb`.
 
 #### Efficiency of Multimodal Models on OC-170K
+We conducted several trials with the three Multimodal Models in our Pykeen extension on the dataset `OC-170K`.<br/>
+The parameters with which we trained the models were:
+- evaluator: RankBased
+- loss: BCEWithLogits
+- embedding dimension: 300
+- input dropout: 0.31970168873359067
+- number of negatives per position: 1
+- learning rate: 0.0015736407249343375
+- batch size: 3032
+- epochs: 1000
+These hyper-parameters were obtained after carrying hyper-parameter optimization on `DistMult_gate_text` for 12 hours. Moreover, early stopping was adopted in the pipeline to prevent overfitting. The configuration files used in the pykeen pipeline are available in the `trials-OC-170K` folder.<br/>
+We conducted five experiments for each model in order to understand the degree of consistency in the results. For each model we looked at Hits@10 and we computed average and standard deviation across five trials.
+The results are:
+- DistMultText: 0.566 (avg)
+- DistMult_gate_text: 0.582 (avg)
+- ComplExText: *not available still*.
+The results are stored in CSV format on `trials-OC-170K/results.csv`.
+
+#### Current issues
+In this section we note down the issues that we still have to face:
+- This procedure involves the manual selection of many parameters, from model hyper-parameters to distance measures and thresholds in clustering.
+- the current dataset doesn't allow to test a systematic author name disambiguation process since author's ORCIDs are not stored.
+- There might be other entities in the Knowledge Graph which were excluded in the embedding modelling process (e.g. `pro:publisher`, `cito:Citation`, `biro:BibliographicReference`).
+- still we haven't addressed the issue of multiple textual labels attached to the same entity (e.f. `foaf:familyName` and `foaf:givenName`).
+- we haven't tackled the question of blocking.
+
 
 ### Update 7/06/2021
 #### Dataset update
