@@ -102,7 +102,7 @@ class TriplesNumericLiteralsFactory(TriplesFactory):
         return MultimodalSLCWAInstances(
             mapped_triples=slcwa_instances.mapped_triples,
             numeric_literals=self.numeric_literals,
-            literals_to_id=self.literals_to_id,
+            textual_literals=None
         )
 
     def create_lcwa_instances(self, use_tqdm: Optional[bool] = None) -> MultimodalLCWAInstances:
@@ -112,5 +112,5 @@ class TriplesNumericLiteralsFactory(TriplesFactory):
             pairs=lcwa_instances.pairs,
             compressed=lcwa_instances.compressed,
             numeric_literals=self.numeric_literals,
-            literals_to_id=self.literals_to_id,
+            textual_literals=None
         )

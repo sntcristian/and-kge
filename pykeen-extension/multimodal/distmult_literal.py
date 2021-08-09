@@ -14,7 +14,6 @@ from ...losses import Loss
 from ...nn import Embedding
 from ...triples import TriplesNumericLiteralsFactory
 from ...typing import DeviceHint
-from ...regularizers import Regularizer
 
 
 class DistMultLiteral(DistMult, MultimodalModel):
@@ -43,7 +42,6 @@ class DistMultLiteral(DistMult, MultimodalModel):
         loss: Optional[Loss] = None,
         preferred_device: DeviceHint = None,
         random_seed: Optional[int] = None,
-        regularizer: Optional[Regularizer] = None
     ) -> None:
         super().__init__(
             triples_factory=triples_factory,
@@ -51,7 +49,6 @@ class DistMultLiteral(DistMult, MultimodalModel):
             loss=loss,
             preferred_device=preferred_device,
             random_seed=random_seed,
-            regularizer=regularizer,
         )
 
         # Literal
@@ -59,7 +56,7 @@ class DistMultLiteral(DistMult, MultimodalModel):
         self.numeric_literals = Embedding(
             num_embeddings=triples_factory.num_entities,
             embedding_dim=triples_factory.numeric_literals.shape[-1],
-            initializer=triples_factory.numeric_literals,
+            initializer=lambda x: triples_factory.numeric_literals,
         )
         # Number of columns corresponds to number of literals
         self.num_of_literals = self.numeric_literals.embedding_dim

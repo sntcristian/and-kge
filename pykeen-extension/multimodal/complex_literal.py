@@ -16,7 +16,6 @@ from ...nn import Embedding
 from ...triples import TriplesNumericLiteralsFactory
 from ...typing import DeviceHint
 from ...utils import split_complex
-from ...regularizers import Regularizer
 
 
 class ComplExLiteral(ComplEx, MultimodalModel):
@@ -47,7 +46,6 @@ class ComplExLiteral(ComplEx, MultimodalModel):
         loss: Optional[Loss] = None,
         preferred_device: DeviceHint = None,
         random_seed: Optional[int] = None,
-        regularizer: Optional[Regularizer] = None,
     ) -> None:
         """Initialize the model."""
         super().__init__(
@@ -58,7 +56,6 @@ class ComplExLiteral(ComplEx, MultimodalModel):
             random_seed=random_seed,
             entity_initializer=xavier_normal_,
             relation_initializer=xavier_normal_,
-            regularizer=regularizer,
         )
 
         # Literal
@@ -66,7 +63,7 @@ class ComplExLiteral(ComplEx, MultimodalModel):
         self.numeric_literals = Embedding(
             num_embeddings=triples_factory.num_entities,
             embedding_dim=triples_factory.numeric_literals.shape[-1],
-            initializer=triples_factory.numeric_literals,
+            initializer=lambda x: triples_factory.numeric_literals,
         )
         # Number of columns corresponds to number of literals
         self.num_of_literals = self.numeric_literals.embedding_dim

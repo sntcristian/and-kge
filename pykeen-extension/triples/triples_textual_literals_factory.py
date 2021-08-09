@@ -51,6 +51,8 @@ class TriplesTextualLiteralsFactory(TriplesFactory):
         triples: Optional[LabeledTriples] = None,
         path_to_textual_triples: Union[None, str, TextIO] = None,
         textual_triples: Optional[np.ndarray] = None,
+        path_to_textual_embeddings: Union[None, str, TextIO] = None,
+        save_literals: bool = False,
         **kwargs
     ) -> None:
         if path is None:
@@ -63,21 +65,22 @@ class TriplesTextualLiteralsFactory(TriplesFactory):
             mapped_triples=base.mapped_triples,
             create_inverse_triples=base.create_inverse_triples,
         )
-
-        if path_to_textual_triples is None and textual_triples is None:
-            raise ValueError('Must specify one of path_to_textual_triples or textual_triples')
-        elif path_to_textual_triples is not None and textual_triples is not None:
-            raise ValueError('Must not specify both path_to_textual_triples and textual_triples')
-        elif path_to_textual_triples is not None:
-            textual_triples = load_triples(path_to_textual_triples)
-
         assert self.entity_to_id is not None
-
-        self.textual_literals = create_matrix_of_txt_literals(
-            textual_triples=textual_triples,
-            entity_to_id=self.entity_to_id,
-        )
-
+        if path_to_textual_embeddings is not None:
+            self.textual_literals = np.load(path_to_textual_embeddings)
+        else:
+            if path_to_textual_triples is None and textual_triples is None:
+                raise ValueError('Must specify one of path_to_textual_triples or textual_triples')
+            elif path_to_textual_triples is not None and textual_triples is not None:
+                raise ValueError('Must not specify both path_to_textual_triples and textual_triples')
+            elif path_to_textual_triples is not None:
+                textual_triples = load_triples(path_to_textual_triples)
+            self.textual_literals = create_matrix_of_txt_literals(
+                textual_triples=textual_triples,
+                entity_to_id=self.entity_to_id,
+            )
+        if save_literals == True:
+            np.save("textual_literals.npy", self.textual_literals)
 
     def extra_repr(self) -> str:  # noqa: D102
         return super().extra_repr() + (

@@ -1,0 +1,13 @@
+Total comparisons: 11070
+Total positives: 9398
+Total negatives: 1672
+
+True positives: 7325
+False positives: 312
+True negatives: 1360
+False negatives: 2073
+
+Precision: 0.9591462616210554
+Recall: 0.7794211534369014
+Accuracy: 0.7845528455284553
+

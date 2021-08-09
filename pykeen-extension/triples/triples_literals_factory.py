@@ -20,7 +20,7 @@ logger = logging.getLogger(__name__)
 def create_matrix_of_num_literals(
     numeric_triples: np.array,
     entity_to_id: EntityMapping,
-) -> Tuple[np.ndarray, Dict[str, int]]:
+) -> np.ndarray:
     """Create matrix of literals where each row corresponds to an entity and each column to a literal."""
     data_relations = np.unique(np.ndarray.flatten(numeric_triples[:, 1:2]))
     data_rel_to_id: Dict[str, int] = {
@@ -39,7 +39,7 @@ def create_matrix_of_num_literals(
             logger.info("Either entity or relation to literal doesn't exist.")
             continue
 
-    return num_literals, data_rel_to_id
+    return num_literals
 
 def create_matrix_of_txt_literals(
     textual_triples: np.array,
@@ -77,6 +77,9 @@ class TriplesLiteralsFactory(TriplesFactory):
         numeric_triples: Optional[np.ndarray] = None,
         path_to_textual_triples: Union[None, str, TextIO] = None,
         textual_triples: Optional[np.ndarray] = None,
+        path_to_textual_embeddings: Union[None, str, TextIO] = None,
+        path_to_numeric_embeddings: Union[None, str, TextIO] = None,
+        save_literals: bool = False,
         **kwargs
     ) -> None:
         if path is None:
@@ -89,34 +92,41 @@ class TriplesLiteralsFactory(TriplesFactory):
             mapped_triples=base.mapped_triples,
             create_inverse_triples=base.create_inverse_triples,
         )
-
-        if path_to_numeric_triples is None and numeric_triples is None:
-            raise ValueError('Must specify one of path_to_numeric_triples or numeric_triples')
-        elif path_to_numeric_triples is not None and numeric_triples is not None:
-            raise ValueError('Must not specify both path_to_numeric_triples and numeric_triples')
-        elif path_to_numeric_triples is not None:
-            numeric_triples = load_triples(path_to_numeric_triples)
-        if path_to_textual_triples is None and textual_triples is None:
-            raise ValueError('Must specify one of path_to_textual_triples or textual_triples')
-        elif path_to_textual_triples is not None and textual_triples is not None:
-            raise ValueError('Must not specify both path_to_textual_triples and textual_triples')
-        elif path_to_textual_triples is not None:
-            textual_triples = load_triples(path_to_textual_triples)
-
         assert self.entity_to_id is not None
-        self.numeric_literals, self.literals_to_id = create_matrix_of_num_literals(
-            numeric_triples=numeric_triples,
-            entity_to_id=self.entity_to_id,
-        )
-        self.textual_literals = create_matrix_of_txt_literals(
-            textual_triples=textual_triples,
-            entity_to_id=self.entity_to_id,
-        )
+        if path_to_numeric_embeddings is not None:
+            self.numeric_literals = np.load(path_to_numeric_embeddings)
+        else:
+            if path_to_numeric_triples is None and numeric_triples is None:
+                raise ValueError('Must specify one of path_to_numeric_triples or numeric_triples')
+            elif path_to_numeric_triples is not None and numeric_triples is not None:
+                raise ValueError('Must not specify both path_to_numeric_triples and numeric_triples')
+            elif path_to_numeric_triples is not None:
+                numeric_triples = load_triples(path_to_numeric_triples)
+            self.numeric_literals = create_matrix_of_num_literals(
+                numeric_triples=numeric_triples,
+                entity_to_id=self.entity_to_id,
+            )
+        if path_to_textual_embeddings is not None:
+            self.textual_literals = np.load(path_to_textual_embeddings)
+        else:
+            if path_to_textual_triples is None and textual_triples is None:
+                raise ValueError('Must specify one of path_to_textual_triples or textual_triples')
+            elif path_to_textual_triples is not None and textual_triples is not None:
+                raise ValueError('Must not specify both path_to_textual_triples and textual_triples')
+            elif path_to_textual_triples is not None:
+                textual_triples = load_triples(path_to_textual_triples)
 
+            self.textual_literals = create_matrix_of_txt_literals(
+                textual_triples=textual_triples,
+                entity_to_id=self.entity_to_id,
+            )
+        if save_literals == True:
+            np.save("textual_literals.npy", self.textual_literals)
+            np.save("numeric_literals.npy", self.numeric_literals)
 
     def extra_repr(self) -> str:  # noqa: D102
         return super().extra_repr() + (
-            f"num_num_literals={len(self.literals_to_id)}"
+            f"num_num_literals={len(self.entity_to_id)}"
         )
 
     def create_slcwa_instances(self) -> MultimodalSLCWAInstances:

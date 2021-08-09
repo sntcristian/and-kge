@@ -45,9 +45,9 @@ class ComplExText(ComplEx, MultimodalModel):
         embedding_dim: int = 50,
         input_dropout: float = 0.2,
         loss: Optional[Loss] = None,
-        regularizer: Optional[Regularizer] = None,
         preferred_device: DeviceHint = None,
-        random_seed: Optional[int] = None
+        random_seed: Optional[int] = None,
+        regularizer: Optional[Regularizer] = None,
     ) -> None:
         """Initialize the model."""
         super().__init__(
@@ -58,7 +58,7 @@ class ComplExText(ComplEx, MultimodalModel):
             random_seed=random_seed,
             entity_initializer=xavier_normal_,
             relation_initializer=xavier_normal_,
-            regularizer=regularizer
+            regularizer=regularizer,
         )
 
         # Literal
