@@ -10,7 +10,7 @@ with open("./data/global/name_to_pubs_test_100.json", "r") as f1:
 with open("./data/global/pubs_raw.json", "r") as f2:
     data = json.load(f2)
 
-dataset_directory = "../dataset/"
+dataset_directory = "../AMiner-534K/"
 
 pub_test = []
 authors_test = set()
