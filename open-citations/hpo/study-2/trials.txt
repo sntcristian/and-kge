@@ -1,0 +1,9 @@
+Trial 0 finished with value: 0.11271309394269133 and parameters: {'model.embedding_dim': 512, 'optimizer.lr': 0.0031547756676919164, 'negative_sampler.num_negs_per_pos': 19, 'training.batch_size': 512, 'training.label_smoothing': 0.013767117956308694}. Best is trial 0 with value: 0.11271309394269133.
+
+Trial 1 finished with value: 0.2283027042276226 and parameters: {'model.embedding_dim': 256, 'optimizer.lr': 0.0011602935873681048, 'negative_sampler.num_negs_per_pos': 42, 'training.batch_size': 512, 'training.label_smoothing': 0.6993112238898559}. Best is trial 1 with value: 0.2283027042276226
+
+Trial 2 finished with value: 0.44235884415427396 and parameters: {'model.embedding_dim': 512, 'optimizer.lr': 0.000300426923485789, 'negative_sampler.num_negs_per_pos': 12, 'training.batch_size': 512, 'training.label_smoothing': 0.0012179915473942017}. Best is trial 2 with value: 0.44235884415427396.
+
+Trial 3 finished with value: 0.4182132349977834 and parameters: {'model.embedding_dim': 512, 'optimizer.lr': 0.0005539382214878253, 'negative_sampler.num_negs_per_pos': 2, 'training.batch_size': 512, 'training.label_smoothing': 0.0018296736706663896}. Best is trial 2 with value: 0.44235884415427396.
+
+Trial 4 finished with value: 0.3747027767702414 and parameters: {'model.embedding_dim': 256, 'optimizer.lr': 0.00010232858873161093, 'negative_sampler.num_negs_per_pos': 17, 'training.batch_size': 256, 'training.label_smoothing': 0.009384404074736171}. Best is trial 2 with value: 0.44235884415427396.

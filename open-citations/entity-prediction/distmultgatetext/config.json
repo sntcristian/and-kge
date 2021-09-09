@@ -1,0 +1,27 @@
+{
+    "metadata": {
+    },
+    "pipeline": {
+      "evaluator": "rankbased",
+      "loss": "bceaftersigmoidloss",
+      "model": "distmult_gate_text",
+      "model_kwargs": {
+        "embedding_dim": 512
+      },
+      "negative_sampler": "basic",
+      "negative_sampler_kwargs": {
+        "num_negs_per_pos": 12
+      },
+      "optimizer": "adam",
+      "optimizer_kwargs": {
+        "lr": 0.000300426923485789
+      },
+      "regularizer": "no",
+      "training_kwargs": {
+        "batch_size": 512,
+        "label_smoothing": 0.0012179915473942017,
+        "num_epochs": 120
+      },
+      "training_loop": "slcwa"
+    }
+  }
