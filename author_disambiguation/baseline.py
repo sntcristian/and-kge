@@ -173,12 +173,12 @@ def evaluate_macro(blocks):
     }
     return output_dict
 
-eval_data_path = "./ami_blocks.json"
+# eval_data_path = "./ami_blocks.json"
 
-with open(eval_data_path, "r") as f:
-    eval_data = json.load(f)
+# with open(eval_data_path, "r") as f:
+#     eval_data = json.load(f)
 
-evaluation_results = evaluate_macro(eval_data)
-with open("./aminer/baseline_results.json", "w") as output_file:
-    json.dump(evaluation_results, output_file, indent=4, sort_keys=True)
-output_file.close()
+# evaluation_results = evaluate_macro(eval_data)
+# with open("./aminer/baseline_results.json", "w") as output_file:
+#     json.dump(evaluation_results, output_file, indent=4, sort_keys=True)
+# output_file.close()

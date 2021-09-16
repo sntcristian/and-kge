@@ -1,4 +1,4 @@
-from author_disambig import cluster_embeddings, evaluate_macro, evaluate_no_macro
+from author_disambig import cluster_KGEs, cluster_titles, evaluate_macro, evaluate_no_macro
 import torch
 import json
 
@@ -13,12 +13,17 @@ def threshold_study(low, high, step, model, eval_data, macro, path):
     f1_values = []
     while threshold <= high:
         current_study += 1
-        cluster_data = cluster_embeddings(model=model, blocks=eval_data, affinity_type="cosine", linkage="single",
-                                             threshold=threshold)
+        if model:
+            cluster_data = cluster_KGEs(model=model, blocks=eval_data, affinity_type="cosine", linkage="single",
+                                                 threshold=threshold)
+        else:
+            cluster_data = cluster_titles(blocks=eval_data, affinity_type="cosine", linkage="single",
+                                                 threshold=threshold)
         if macro:
             evaluation_results = evaluate_macro(cluster_data, eval_data)
         else:
             evaluation_results = evaluate_no_macro(cluster_data, eval_data)
+
         precision_values.append(evaluation_results["precision"])
         recall_values.append(evaluation_results["recall"])
         f1_values.append(evaluation_results["F1 score"])
@@ -40,12 +45,12 @@ def threshold_study(low, high, step, model, eval_data, macro, path):
     outp.close()
 
 
-model_path = "../models/aminer/DISTMULT/trained_model.pkl"
-eval_data_path = "./aminer/blocks.json"
-with open(eval_data_path, "r") as f:
-     eval_data = json.load(f)
-
-model = torch.load(model_path, map_location=torch.device('cpu'))
-
-threshold_study(low=0.2, high=0.4, step=0.02, model=model, eval_data=eval_data, macro=True, path="./aminer/")
+# model_path = "../models/aminer/DISTMULT/trained_model.pkl"
+# eval_data_path = "./aminer_blocks.json"
+# with open(eval_data_path, "r") as f:
+#      eval_data = json.load(f)
+#
+# model = torch.load(model_path, map_location=torch.device('cpu'))
+#
+# threshold_study(low=0.2, high=0.4, step=0.02, model=model, eval_data=eval_data, macro=True, path="./aminer/")
 
