@@ -1,0 +1,12 @@
+{
+    "F1 score": 0.7183908045977012,
+    "false_negative": 484,
+    "false_positive": 300,
+    "precision": 0.7692307692307693,
+    "recall": 0.6738544474393531,
+    "total_comparisons": 3156,
+    "total_negatives": 1672,
+    "total_positives": 1484,
+    "true_negative": 1372,
+    "true_positive": 1000
+}
