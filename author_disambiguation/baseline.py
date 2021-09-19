@@ -1,6 +1,22 @@
 import json
 from tqdm import tqdm
 import re
+import nltk
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
+
+
+stop_words = set(stopwords.words('english'))
+
+def check_self_citation(author1, author2):
+    references1 = set(author1.get("references", ""))
+    references2 = set(author2.get("references", ""))
+    if len(references1) == 0 or len(references2) == 0:
+        return None
+    elif author1["work"] in references2 or author2["work"] in references1:
+        return True
+    else:
+        return None
 
 def compare_affiliation(author1, author2):
     affiliation1 = author1.get("affiliation", "")
@@ -13,8 +29,10 @@ def compare_affiliation(author1, author2):
         return 0
 
 def compare_titles(author1, author2):
-    titles1 = set(re.sub(r'[^\w\s]', '', author1["title"]).split())
-    titles2 = set(re.sub(r'[^\w\s]', '', author2["title"]).split())
+    title1_tokens = word_tokenize(author1["title"])
+    title2_tokens = word_tokenize(author2["title"])
+    titles1 = set([w for w in title1_tokens if not w.lower in stop_words])
+    titles2 = set([w for w in title2_tokens if not w.lower in stop_words])
     if len(titles1) == 0 or len(titles2) == 0:
         return 0
     else:
@@ -58,11 +76,11 @@ def compare_authors(author1, author2):
     score_affiliation = 0
     score = 0
     if compare_coauthors(author1, author2) == 1:
-        score_coauthors += 3
+        score_coauthors += 4
     elif compare_coauthors(author1, author2) == 2:
-        score_coauthors += 5
+        score_coauthors += 7
     elif compare_coauthors(author1, author2) > 2:
-        score_coauthors += 8
+        score_coauthors += 10
 
     if compare_titles(author1, author2) == 1:
         score_titles += 3
@@ -72,19 +90,26 @@ def compare_authors(author1, author2):
         score_titles += 8
 
     if compare_journals(author1, author2) >= 1:
-        score_journals += 4
+        score_journals += 6
 
     if common_references(author1, author2) == 1:
         score_references += 2
     elif common_references(author1, author2) == 2:
         score_references += 3
-    elif common_references(author1, author2) >= 3:
-        score_references += 5
+    elif common_references(author1, author2) == 3:
+        score_references += 6
+    elif common_references(author1, author2) == 4:
+        score_references += 8
+    elif common_references(author1, author2) > 4:
+        score_references += 10
 
     if compare_affiliation(author1, author2) == 1:
-        score_affiliation += 4
+        score_affiliation += 6
 
-    if score_coauthors + score_journals + score_titles + score_references + score_affiliation >= 6:
+    if check_self_citation(author1, author2):
+        score_references += 10
+
+    if score_coauthors + score_journals + score_titles + score_references + score_affiliation >= 10:
         score = 1
     return score
 
@@ -173,12 +198,12 @@ def evaluate_macro(blocks):
     }
     return output_dict
 
-# eval_data_path = "./ami_blocks.json"
+# eval_data_path = "./aminer_blocks.json"
 
 # with open(eval_data_path, "r") as f:
 #     eval_data = json.load(f)
 
 # evaluation_results = evaluate_macro(eval_data)
-# with open("./aminer/baseline_results.json", "w") as output_file:
+# with open("./aminer_baseline2.json", "w") as output_file:
 #     json.dump(evaluation_results, output_file, indent=4, sort_keys=True)
 # output_file.close()
