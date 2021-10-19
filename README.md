@@ -2,6 +2,16 @@
 
 This is the repository for my master thesis project on Knowledge Graph Embeddings for Author Name Disambiguation.
 
+- summary
+
+- data
+
+- models
+
+- extension
+
+- evaluation
+
 ## Affiliation
 
 - [Digital Humanities and Digital Knowledge - University of Bologna](https://corsi.unibo.it/2cycle/DigitalHumanitiesKnowledge)
