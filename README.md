@@ -16,8 +16,7 @@ The `open-citations` and `aminer` folders contain all the scripts used for gener
 The `pykeen-extension` directory contains an extension of [pykeen (Release: v1.4.0.)](https://github.com/pykeen/pykeen/releases/tag/v1.4.0). In this directory we implemented three new models: `DistMultText`, `ComplExText` and `DistMult_gate_text` , all extension of the LiteralE model which allow to train knowledge graph embeddings by means of structural and literal information [5]. More details are available below.<br/>
 The `author-disambiguation` directory contains `disambiguation` module, with all the functions used to perform author name disambiguation with KGEs and evaluate the performances of the models. The directory contains also the results of the evaluation that we carried in our research.
 
-## Multimodal Knowledge Graph Embeddings for Author Disambiguation
-
+## Multimodal Knowledge Graph Embeddings
 ## Results
 
 ## References
