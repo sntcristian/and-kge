@@ -13,10 +13,10 @@ For this research, we developed two newly collected scholarly Knowledge Graphs: 
 
 This repository contains all the scripts and pieces of code used for our research in order to maximize the riproducibility of our methodology. <br/>
 The `open-citations` and `aminer` folders contain all the scripts used for generating the scholarly knowledge graph studied, along with the configuration files for training KGEs on these datasets and the results of the models on entity prediction.<br/>
-The `pykeen-extension` directory contains an extension of [pykeen (Release: v1.4.0.)](https://github.com/pykeen/pykeen/releases/tag/v1.4.0). In this directory we implemented three new models: `DistMultText`, `ComplExText` and `DistMult_gate_text` , all extension of the LiteralE model which allow to train knowledge graph embeddings by means of structural and literal information [5]. More details are available in the `README.md` file of the directory.<br/>
+The `pykeen-extension` directory contains an extension of [pykeen (Release: v1.4.0.)](https://github.com/pykeen/pykeen/releases/tag/v1.4.0). In this directory we implemented three new models: `DistMultText`, `ComplExText` and `DistMult_gate_text` , all extension of the LiteralE model which allow to train knowledge graph embeddings by means of structural and literal information [5]. More details are available below.<br/>
 The `author-disambiguation` directory contains `disambiguation` module, with all the functions used to perform author name disambiguation with KGEs and evaluate the performances of the models. The directory contains also the results of the evaluation that we carried in our research.
 
-## Models
+## Multimodal Knowledge Graph Embeddings for Author Disambiguation
 
 ## Results
 
