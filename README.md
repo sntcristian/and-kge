@@ -6,7 +6,7 @@ This is the repository for the master thesis project on Knowledge Graph Embeddin
 
 This repository contains notebooks and scripts used for a research on Author Name Disambiguation using Knowledge Graph Embeddings (KGEs) with literals.
 Due to the unavailability of an established benchmark for evaluating our approach, we extracted two Knowledge Graphs (KGs) from the following publicly available resources: 1) a triplestore available on Zenodo [1] covering information about the journal [Scientometrics](https://www.springer.com/journal/11192) and modelled according to the [OpenCitations Data Model](https://opencitations.net/model) and 2) a publicly available benchmark for author disambiguation available [at this link](https://static.aminer.cn/misc/na-data-kdd18.zip) by [AMiner](https://www.aminer.org/). <br/>
-The Knowledge Graphs extracted are available on Zenodo as [OpenCitations-782K](https://doi.org/10.5281/zenodo.5675787) [2] and [AMiner-534K](https://doi.org/10.5281/zenodo.5675801) [3]. Each dataset is organized as a collection of RDF triples stored in TSV format. Literal triples are stored separately in order to train multimodal Knowledge Graph Embedding (KGE) models.<br/>
+The Knowledge Graphs extracted are available on Zenodo as [OpenCitations-782K](https://doi.org/10.5281/zenodo.5675787) [2] and [AMiner-534K](https://doi.org/10.5281/zenodo.5675801) [3]. Each dataset is organized as a collection of RDF triples stored in TSV format. Literal triples are stored separately in order to train multimodal Knowledge Graph Embedding models.<br/>
 Each dataset contains a JSON file called `and_eval.json` which contains a list of publications in the scholarly KGs labelled for evaluating AND algorithms. For the evaluation, while for AMiner-534K the set of publications was already manually annotated by a team of experts, for OC-782K we used the ORCID iDs associated with the authors in the triplestore in order to create an evaluation dataset.
 
 ## [PyKEEN](https://github.com/pykeen/pykeen) extension
@@ -52,6 +52,24 @@ The following table shows the results of our experiments for **AMiner-534K**.
 | *DistMult_gate_text* | 3560	 | **0.3452** | 0.2163 | **0.4123** | 0.5009 | **0.6028** |
 
 ### Author Name Disambiguation
+
+We compared our architecture for Author Name Disambiguation (AND) for KGs with a simple Rule-based method inspired by Caron and Van Eck [8] on **OC-782K** and with other state-of-the-art graph embedding models on a AMiner benchmark (results taken from [9]). The results are reported below.
+
+| Model | Precision | Recall | F1 |
+|-------|-----------|--------|----|
+| *Caron & Van Eck* | 84.66 | 50.20 | 63.03 |
+| *DistMult* | **91.71** | 67.11 | **77.50** |
+| *DistMultText* | 89.63 | 66.98 | 76.67 |
+| *DistMult_gate_text* | 82.76 | **67.59** | 74.40 |
+
+| Model | Precision | Recall | F1 |
+|-------|-----------|--------|----|
+| *Zhang and Al Hasan* [10] | 70.63 | 59.53 | 62.81 |
+| *Zhang et Al.* [9] |  77.96 | **63.03** |**67.79** |
+| *DistMult* | **78.36** | 59.68 | 63.36 |
+| *DistMultText* | 77.24 | 61.21 | 64.18 |
+| *DistMult_gate_text* | 77.62 | 59.91 | 63.07 |
+
 
 ## References
 
