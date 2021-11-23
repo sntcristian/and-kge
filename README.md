@@ -84,6 +84,20 @@ We compared our architecture for Author Name Disambiguation (AND) for KGs with a
 
 [4] Kristiadi A., Khan M.A., Lukovnikov D., Lehmann J., Fischer A. (2019) Incorporating Literals into Knowledge Graph Embeddings. In: Ghidini C. et al. (eds) The Semantic Web – ISWC 2019. ISWC 2019. Lecture Notes in Computer Science, vol 11778. Springer, Cham. [https://doi.org/10.1007/978-3-030-30793-6_20](https://doi.org/10.1007/978-3-030-30793-6_20).
 
+[5] Yang, B., Yih, W., He, X., Gao, J., & Deng, L. (2015). Embedding Entities and Relations for Learning and Inference in Knowledge Bases. ArXiv:1412.6575 [Cs]. http://arxiv.org/abs/1412.6575
+
+[6] Trouillon, T., Welbl, J., Riedel, S., Gaussier, É., & Bouchard, G. (2016). Complex Embeddings for Simple Link Prediction. ArXiv:1606.06357 [Cs, Stat]. http://arxiv.org/abs/1606.06357
+
+[7] Cohan, A., Feldman, S., Beltagy, I., Downey, D., & Weld, D. S. (2020). SPECTER: Document-level Representation Learning using Citation-informed Transformers. ArXiv:2004.07180 [Cs]. http://arxiv.org/abs/2004.07180
+
+[8] Caron, E., & van Eck, N.-J. (2014). Large scale author name disambiguation using rule-based scoring and clustering: International conference on science and technology indicators. Proceedings of the Science and Technology Indicators Conference 2014, 79–86. http://sti2014.cwts.nl
+
+[9] Zhang, Y., Zhang, F., Yao, P., & Tang, J. (2018). Name Disambiguation in AMiner: Clustering, Maintenance, and Human in the Loop. Proceedings of the 24th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining, 1002–1011. https://doi.org/10.1145/3219819.3219859
+
+[10] Zhang, B., & Al Hasan, M. (2017). Name Disambiguation in Anonymized Graphs using Network Embedding. Proceedings of the 2017 ACM on Conference on Information and Knowledge Management, 1239–1248. https://doi.org/10.1145/3132847.3132873
+
+
+ 
 ## Acknowledgments
 
 The software and data here available are the result of a master thesis carried in collaboration between the [FICLIT department](https://ficlit.unibo.it/it) of the University of Bologna and the research department [FIZ - Information Service Engineering (ISE)](https://www.fiz-karlsruhe.de/index.php/en/forschung/information-service-engineering) of the Karlsruhe Institute of Technology (KIT). The thesis has been supervised by Prof. Aldo Gangemi and Prof. Silvio Peroni from the University of Bologna, and Prof. Harald Sack, Dr. Mehwish Alam and Genet Asefa Gesese from FIZ-ISE.		
