@@ -15,7 +15,7 @@ The `pykeen-extension` directory contains extension files compatible with [PyKEE
 The extended library provides an implementation of the following models:
 - `DistMultText`: an extension of the DistMult model [5] for training KGEs by using entity descriptions attached to entities. 
 - `ComplExText`: an extension of the ComplEx model [6] which allows to train KGEs by using information coming from short text descriptions attached to entities.
-- `DistMult_gate_text`: an extension of the DistMult model which allows to train KGEs by using information coming from short text descriptions and numeric value associated with entities in KGs.
+- `DistMult_gate_text`: an extension of the DistMult model which allows to train KGEs by using information coming from short text descriptions and numeric value associated with entities in KGs.<br/>
 Entity descriptions are encoded by using SPECTER [7], a BERT language model for scientific documents.<br/>
 
 
@@ -34,15 +34,22 @@ The `src` folder also contains the various scripts used for extracting the schol
 For evaluating the quality of our KGE models in representing the components of the studied KGs, **OpenCitations-782K** and **AMiner-534K**, we used entity prediction, one of the most common KG-completion tasks. In our experiments, we compared three architectures:
 - A `DistMult` model trained with only structural triples, i.e. triples connecting just two entities.
 - A `DistMultText` model which was trained by using titles of scholarly resources, i.e. journals and publications, along with structural triples.
-- A `DistMult_gate_text` model which was trained using titles and publication dates of scholarly resources in order to leverage the representations of the entities associated with them.
+- A `DistMult_gate_text` model which was trained using titles and publication dates of scholarly resources in order to leverage the representations of the entities associated with them.<br/>
 Hyper-parameters were obtained by doing `hyper-parameter optimization` with PyKEEN. Details about the configuration files are available in the `kge-evaluation` folder.
 
 The following table shows the results of our experiments for **OC-782K**.
 | Model | MR | MRR | Hits@1 | Hits@3 | Hits@5 | Hits@10 |
 |-------|----|-----|--------|--------|--------|---------|
-| DistMult | **59901** | **0.3570** | 0.3157 | **0.3812** | **0.402** | **0.4267** |
-| DistMultText | 60495 | 0.3568 | **0.3158** | 0.3809 | 0.4013 | 0.4252 |
-| DistMult_gate_text | 61812 | 0.3534 | 0.3130 | 0.3767 | 0.3971 | 0.4218 |
+| *DistMult* | **59901** | **0.3570** | 0.3157 | **0.3812** | **0.402** | **0.4267** |
+| *DistMultText* | 60495 | 0.3568 | **0.3158** | 0.3809 | 0.4013 | 0.4252 |
+| *DistMult_gate_text* | 61812 | 0.3534 | 0.3130 | 0.3767 | 0.3971 | 0.4218 |
+
+The following table shows the results of our experiments for **AMiner-534K**.
+| Model | MR | MRR | Hits@1 | Hits@3 | Hits@5 | Hits@10 |
+|-------|----|-----|--------|--------|--------|---------|
+| *DistMult* | 3585| 0.3285 | 0.1938 | 0.3996 |0.4911 | 0.5940 |
+| *DistMultText* | **3474**	 | 0.3443 | **0.2139** | **0.4123** |**0.5014** | 0.6019 |
+| *DistMult_gate_text* | 3560	 | **0.3452** | 0.2163 | **0.4123** | 0.5009 | **0.6028** |
 
 ### Author Name Disambiguation
 
