@@ -53,7 +53,7 @@ The following table shows the results of our experiments for **AMiner-534K**.
 
 ### Author Name Disambiguation
 
-We compared our architecture for Author Name Disambiguation (AND) for KGs with a simple Rule-based method inspired by Caron and Van Eck [8] on **OC-782K** and with other state-of-the-art graph embedding models on a AMiner benchmark (results taken from [9]). The results are reported below.
+We compared our architecture for Author Name Disambiguation (AND) for KGs with a simple Rule-based method inspired by Caron and Van Eck [8] on **OC-782K** and with other state-of-the-art graph embedding models on [the AMiner benchmark](https://www.aminer.org/) (results taken from [9]). The results are reported below.
 
 | Model | Precision | Recall | F1 |
 |-------|-----------|--------|----|
