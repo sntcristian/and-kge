@@ -62,6 +62,8 @@ We compared our architecture for Author Name Disambiguation (AND) for KGs with a
 | *DistMultText* | 89.63 | 66.98 | 76.67 |
 | *DistMult_gate_text* | 82.76 | **67.59** | 74.40 |
 
+<br/>
+
 | Model | Precision | Recall | F1 |
 |-------|-----------|--------|----|
 | *Zhang and Al Hasan* [10] | 70.63 | 59.53 | 62.81 |
