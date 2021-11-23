@@ -59,5 +59,5 @@ The following table shows the results of our experiments for **OC-782K**.
 
 ## Acknowledgments
 
-The software and data here available are the result of a master thesis collaboration between the [FICLIT department](https://ficlit.unibo.it/it) of the University of Bologna and the research department [FIZ - Information Service Engineering (ISE)](https://www.fiz-karlsruhe.de/index.php/en/forschung/information-service-engineering) of the Karlsruhe Institute of Technology (KIT). The thesis has been supervised by Prof. Aldo Gangemi and Prof. Silvio Peroni from the University of Bologna, and Prof. Harald Sack, Dr. Mehwish Alam and Genet Asefa Gesese from FIZ-ISE.		
+The software and data here available are the result of a master thesis carried in collaboration between the [FICLIT department](https://ficlit.unibo.it/it) of the University of Bologna and the research department [FIZ - Information Service Engineering (ISE)](https://www.fiz-karlsruhe.de/index.php/en/forschung/information-service-engineering) of the Karlsruhe Institute of Technology (KIT). The thesis has been supervised by Prof. Aldo Gangemi and Prof. Silvio Peroni from the University of Bologna, and Prof. Harald Sack, Dr. Mehwish Alam and Genet Asefa Gesese from FIZ-ISE.		
 
