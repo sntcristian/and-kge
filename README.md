@@ -57,7 +57,7 @@ We compared our architecture for Author Name Disambiguation (AND) for KGs with a
 
 | Model | Precision | Recall | F1 |
 |-------|-----------|--------|----|
-| *Caron & Van Eck* | 84.66 | 50.20 | 63.03 |
+| *Caron & Van Eck* [8] | 84.66 | 50.20 | 63.03 |
 | *DistMult* | **91.71** | 67.11 | **77.50** |
 | *DistMultText* | 89.63 | 66.98 | 76.67 |
 | *DistMult_gate_text* | 82.76 | **67.59** | 74.40 |
