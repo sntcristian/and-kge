@@ -96,6 +96,27 @@ We compared our architecture for Author Name Disambiguation (AND) for KGs with a
 
 [10] Zhang, B., & Al Hasan, M. (2017). Name Disambiguation in Anonymized Graphs using Network Embedding. Proceedings of the 2017 ACM on Conference on Information and Knowledge Management, 1239–1248. https://doi.org/10.1145/3132847.3132873
 
+## Citation
+
+@article{DBLP:journals/corr/abs-2201-09555,
+  author    = {Cristian Santini and
+               Genet Asefa Gesese and
+               Silvio Peroni and
+               Aldo Gangemi and
+               Harald Sack and
+               Mehwish Alam},
+  title     = {A Knowledge Graph Embeddings based Approach for Author Name Disambiguation
+               using Literals},
+  journal   = {CoRR},
+  volume    = {abs/2201.09555},
+  year      = {2022},
+  url       = {https://arxiv.org/abs/2201.09555},
+  eprinttype = {arXiv},
+  eprint    = {2201.09555},
+  timestamp = {Tue, 01 Feb 2022 14:59:01 +0100},
+  biburl    = {https://dblp.org/rec/journals/corr/abs-2201-09555.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
 
  
 ## Acknowledgments
