@@ -98,24 +98,21 @@ We compared our architecture for Author Name Disambiguation (AND) for KGs with a
 
 ## Citation
 
-@article{DBLP:journals/corr/abs-2201-09555,
+@article{DBLP:journals/corr/abs-2201-09555, <br/>
   author    = {Cristian Santini and
-               Genet Asefa Gesese and
-               Silvio Peroni and
+               Genet Asefa Gesese and 
+               Silvio Peroni and 
                Aldo Gangemi and
                Harald Sack and
-               Mehwish Alam},
+               Mehwish Alam}, <br/>
   title     = {A Knowledge Graph Embeddings based Approach for Author Name Disambiguation
-               using Literals},
-  journal   = {CoRR},
-  volume    = {abs/2201.09555},
-  year      = {2022},
-  url       = {https://arxiv.org/abs/2201.09555},
-  eprinttype = {arXiv},
-  eprint    = {2201.09555},
-  timestamp = {Tue, 01 Feb 2022 14:59:01 +0100},
-  biburl    = {https://dblp.org/rec/journals/corr/abs-2201-09555.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+               using Literals}, <br/>
+  journal   = {CoRR}, <br/>
+  volume    = {abs/2201.09555}, <br/>
+  year      = {2022}, <br/>
+  url       = {https://arxiv.org/abs/2201.09555}, <br/>
+  eprinttype = {arXiv}, <br/>
+  eprint    = {2201.09555}  <br/>
 }
 
  
